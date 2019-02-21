@@ -19,12 +19,12 @@
       <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Admin Dashboard</div>
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+          <a href="{{ url('back/newscenter') }}" class="list-group-item list-group-item-action bg-light">New Center</a>
+          <a href="{{ route("showstaff") }}" class="list-group-item list-group-item-action bg-light">Staff Management</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+          <a  onclick="load_main_content()" class="list-group-item list-group-item-action bg-light">Status</a>
         </div>
       </div>
 
@@ -59,12 +59,17 @@
           </div>
         </nav>
 
-        <div class="container-fluid">
-          <h1 class="mt-4">Simple Sidebar</h1>
-          <p>data</p>
+        <div id="div1" class="container-fluid">
+          @yield('content')
         </div>
       </div>
 
   </div>
   </body>
 </html>
+<!-- <script type="text/javascript">
+    function load_main_content()
+    {
+        $("#div1").load('../resources/views/back/shownews.blade.php');
+    }
+</script> -->

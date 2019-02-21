@@ -18,6 +18,23 @@
 Route::get('/', 'Front\HomeController@index');
 
 Route::get('/admin', 'Back\DashboardController@index');
+Route::resource('/back/newscenter', 'Back\NewsCenterController');
+
+
+
+
+// Route::get('/back/newscenter', 'Back\NewsCenterController@showeditnews')->name('showeditnews');
+
+
+
+
+
+
+Route::get('/showstaff', 'Back\DashboardController@showstaff')->name('showstaff');
+
+
+
+
 // Auth::routes();
 //
 // Route::get('/home', 'HomeController@index')->name('home');

@@ -29,7 +29,7 @@ $('#logoimg').width(150);
     // document.getElementById("logoimg").height = "120";
     $('#logoimg').width("350px");
     $('#logoimg').height("120px");
-    document.getElementById("carouselExampleIndicators").style.top = "0px";
+    document.getElementById("carouselIndicators").style.top = "0px";
 
   }
 }
