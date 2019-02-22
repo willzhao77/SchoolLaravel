@@ -2,16 +2,21 @@
 @section('content')
 
 <div class="">
-  <form class="" action="index.html" method="post">
+  <form action="{{ url('back/newscenter') }}" method="POST">
+    {!! csrf_field() !!}
     <div class="">
-      <label for="">News Title</label><input type="text" name="newstitle" value="">
+      <label for="">News Title</label><input type="text" name="title" value="">
     </div>
     <div class="">
-      <label for="">Picture</label><input type="file" accept="image/*">
+      <label for="">Author</label><input type="text" name="author" value="">
     </div>
     <div class="">
-      <label for="">Details</label><textarea name="comment" form="usrform">Enter text here...</textarea>
+      <label for="">Picture</label><input type="file" accept="image/*" name="imgpath">
     </div>
+    <div class="">
+      <label for="">Details</label><textarea name="content" >Enter text here...</textarea>
+    </div>
+    <button class="btn btn-lg btn-info">Add New</button>
   </form>
 </div>
 

@@ -1,6 +1,7 @@
 @extends('adminframe')
 @section('content')
 <div class="">
+  <a href="{{ url('back/newscenter/create') }}" class="btn btn-lg btn-primary">Create News</a>
   <table border = "1px">
     <tr>
       <th>Pic</th>
@@ -22,7 +23,11 @@
       <td>
         <!-- <input type="button" onclick="location.href='editnews';" value="Edit" /> -->
         <a href="{{ url('back/newscenter/'.$newsitem->id.'/edit') }}" class="btn btn-success">Edit</a>
-        <button type="button" name="button">Delete</button>
+        <form action="{{ url('back/newscenter/'.$newsitem->id) }}" method="POST" style="display: inline;">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
       </td>
     </tr>
     @endforeach
