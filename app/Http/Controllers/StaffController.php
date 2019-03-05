@@ -25,7 +25,7 @@ class StaffController extends Controller
 
   public function showsupportstaff()
   {
-    return view('front/teachingstaff')->with('staffitems', Staff::where('type', '=', '2')->get());
+    return view('front/supportstaff')->with('staffitems', Staff::where('type', '=', '2')->get());
   }
 
   public function store(Request $request)
