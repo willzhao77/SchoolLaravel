@@ -15,10 +15,28 @@
 
 
 
-Route::get('/', 'Front\HomeController@index');
+Route::get('/', 'Front\HomeController@index')->name('home');
+Route::get('/teachingstaff', 'StaffController@showteachingstaff')->name('showteachingstaff');
+Route::get('/supportstaff', 'StaffController@showsupportstaff')->name('showsupportstaff');
+
+Route::get('/history', function(){
+  return view('/front/history');
+})->name('history');
+
+Route::get('/ero', function(){
+  return view('/front/ero');
+})->name('ero');
+
+Route::get('/vaccancy', function(){
+  return view('/front/vaccancy');
+})->name('vaccancy');
+
+
+
 
 Route::get('/admin', 'Back\DashboardController@index');
 Route::resource('/back/newscenter', 'Back\NewsCenterController');
+Route::resource('/back/staff', 'StaffController');
 
 
 

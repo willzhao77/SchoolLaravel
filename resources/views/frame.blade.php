@@ -31,18 +31,18 @@
               <div class="collapse navbar-collapse text-center" id="navbarlinks">
                   <ul class="navbar-nav flex-wrap">
                       <li class="nav-item">
-                          <a class="nav-link rounded" href="index.html">Home</a>
+                          <a class="nav-link rounded" href= "{{ route ('home') }}">Home</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           About us
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="schoolhistory.html">School History</a>
-                          <a class="dropdown-item" href="#">ERO Report</a>
-                          <a class="dropdown-item" href="teachingstaff.html">Teaching Staff</a>
-                          <a class="dropdown-item" href="#">Support  Staff</a>
-                          <a class="dropdown-item" href="#">Vaccancy</a>
+                          <a class="dropdown-item" href="{{ route ('history') }}">School History</a>
+                          <a class="dropdown-item" href="{{ route ('ero') }}">ERO Report</a>
+                          <a class="dropdown-item" href="{{ route ('showteachingstaff') }}">Teaching Staff</a>
+                          <a class="dropdown-item" href="{{ route ('showsupportstaff') }}">Support  Staff</a>
+                          <a class="dropdown-item" href="{{ route ('vaccancy') }}">Vaccancy</a>
                         </div>
                       </li>
                       <li class="nav-item dropdown">

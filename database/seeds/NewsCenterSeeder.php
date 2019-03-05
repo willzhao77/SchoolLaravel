@@ -15,7 +15,7 @@ class NewsCenterSeeder extends Seeder
         DB::table('newscenter')->insert([
            'title' => 'This is News Title' . $i,
            'author' => 'Author' . $i,
-           'imgpath' => '/img/news' . $i .'jpg',
+           'imgpath' => '/img/news' . $i .'.jpg',
            'content' => 'This is the article conent' . $i,
            ]);
       }

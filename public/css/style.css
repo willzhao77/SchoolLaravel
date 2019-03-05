@@ -94,6 +94,12 @@ body {
   width: 33.3%;
 }
 
+.staffitem{
+  float: left;
+  padding: 30px;
+  width: 25%;
+}
+
 .news{
   margin-top: 25px;
 }
@@ -196,9 +202,9 @@ body {
 }
 
 
-
-
-
+.dropdown-menu{
+  margin-top: 0px;
+}
 
 /* Navbar Hover Dropdown */
 li.dropdown:hover > .dropdown-menu {

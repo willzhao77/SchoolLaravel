@@ -20,7 +20,7 @@
         <div class="sidebar-heading">Admin Dashboard</div>
         <div class="list-group list-group-flush">
           <a href="{{ url('back/newscenter') }}" class="list-group-item list-group-item-action bg-light">New Center</a>
-          <a href="{{ route("showstaff") }}" class="list-group-item list-group-item-action bg-light">Staff Management</a>
+          <a href="{{ url('back/staff') }}" class="list-group-item list-group-item-action bg-light">Staff Management</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
           <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
