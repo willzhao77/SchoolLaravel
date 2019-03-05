@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="">
-  <form action="{{ url('back/newscenter/'.$newsitem->id) }}" method="POST">
+  <form action="{{ url('back/newscenter/'.$newsitem->id) }}" method="POST" enctype="multipart/form-data">
     {{ method_field('PATCH') }}
     {!! csrf_field() !!}
     <div class="">
@@ -16,7 +16,7 @@
         <p>../{{ $newsitem->imgpath }}</p>
     </div>
     <div class="">
-      <label for="">Picture</label><input type="file" accept="image/*" name="imgpath">
+      <label for="">Picture</label><input type="file" accept="image/*" name="image">
     </div>
     <div class="">
       <label for="">Details</label><textarea name="content" >{{ $newsitem->content }}</textarea>

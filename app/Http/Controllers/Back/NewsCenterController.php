@@ -26,13 +26,20 @@ class NewsCenterController extends Controller
         'title' => 'required',
         // 'title' => 'max:200',
         'content' => 'required',
-        'imgpath' => 'required',
+        'image' => 'required',
 
     ]);
+
+    $image = $request->file('image');
+    $imagename =time() . $image->getClientOriginalName();
+    $destinationPath = 'img/news/';
+    $image->move($destinationPath, $imagename);
+
+
     $newsitem = new NewsCenter;
     $newsitem->title = $request->get('title');
     $newsitem->author = $request->get('author');
-    $newsitem->imgpath = $request->get('imgpath');
+    $newsitem->imgpath = 'img/news/' . $imagename;
     $newsitem->content = $request->get('content');
     if ($newsitem->save())
     {
@@ -56,7 +63,16 @@ class NewsCenterController extends Controller
     $newsitem = NewsCenter::find($id);
     $newsitem->title = $request->get('title');
     $newsitem->author = $request->get('author');
-    $newsitem->imgpath = $request->get('imgpath');
+
+    // if user selected new photo, upload photo
+    if ($request->hasFile('image')) {
+      $image = $request->file('image');
+      $imagename =time() . $image->getClientOriginalName();
+      $destinationPath = 'img/news/';
+      $image->move($destinationPath, $imagename);
+      $newsitem->imgpath = 'img/news/' . $imagename;
+    }
+
     $newsitem->content = $request->get('content');
     if ($newsitem->save()) {
           return redirect('/back/newscenter');

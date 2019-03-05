@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Staff;
+use Validator;
 
 class StaffController extends Controller
 {
@@ -34,14 +35,24 @@ class StaffController extends Controller
         'name' => 'required',
         'title' => 'required',
         'type' => 'required',
-        'imgpath' => 'required',
+        'image' => 'required',
 
     ]);
+
+
+    $image = $request->file('image');
+    $imagename =time() . $image->getClientOriginalName();
+    $destinationPath = 'img/staff/';
+    $image->move($destinationPath, $imagename);
+
     $staffitem = new Staff;
     $staffitem->name = $request->get('name');
     $staffitem->title = $request->get('title');
-    $staffitem->imgpath = $request->get('imgpath');
+    $staffitem->imgpath = 'img/staff/' . $imagename;
     $staffitem->type = $request->get('type');
+
+
+
     if ($staffitem->save())
     {
       return redirect('/back/staff');
@@ -63,10 +74,24 @@ class StaffController extends Controller
   //   'title' => 'required',
   //   'body' => 'required',
   //   ]);
+
+
+
+
     $staffitem = Staff::find($id);
     $staffitem->name = $request->get('name');
     $staffitem->title = $request->get('title');
-    $staffitem->imgpath = $request->get('imgpath');
+
+    // if user selected new photo, upload photo
+    if ($request->hasFile('image')) {
+      $image = $request->file('image');
+      $imagename =time() . $image->getClientOriginalName();
+      $destinationPath = 'img/staff/';
+      $image->move($destinationPath, $imagename);
+      $staffitem->imgpath = 'img/staff/' . $imagename;
+    }
+
+
     $staffitem->type = $request->get('type');
     if ($staffitem->save()) {
           return redirect('/back/staff');
