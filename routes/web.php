@@ -31,6 +31,43 @@ Route::get('/vaccancy', function(){
   return view('/front/vaccancy');
 })->name('vaccancy');
 
+Route::get('/curriculum', function(){
+  return view('/front/curriculum');
+})->name('curriculum');
+
+Route::get('/timetable', function(){
+  return view('/front/timetable');
+})->name('timetable');
+
+Route::get('/codeofconduct', function(){
+  return view('/front/codeofconduct');
+})->name('codeofconduct');
+
+Route::get('/lunchordders', function(){
+  return view('/front/lunchordders');
+})->name('lunchordders');
+
+Route::get('/afterschoolcare', function(){
+  return view('/front/afterschoolcare');
+})->name('afterschoolcare');
+
+
+Route::get('/enrollment', function(){
+  return view('/front/enrollment');
+})->name('enrollment');
+
+Route::get('/uniform', function(){
+  return view('/front/uniform');
+})->name('uniform');
+
+Route::get('/newentrants', function(){
+  return view('/front/newentrants');
+})->name('newentrants');
+
+Route::get('/internationalstudents', function(){
+  return view('/front/internationalstudents');
+})->name('internationalstudents');
+
 
 
 

@@ -50,11 +50,11 @@
                           School Information
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Curriculum</a>
-                          <a class="dropdown-item" href="#">Time Table</a>
-                          <a class="dropdown-item" href="#">Code of Conduct</a>
-                          <a class="dropdown-item" href="#">Lunch Orders</a>
-                          <a class="dropdown-item" href="#">After Shool Care</a>
+                          <a class="dropdown-item" href="{{ route ('curriculum') }}">Curriculum</a>
+                          <a class="dropdown-item" href="{{ route ('timetable') }}">Time Table</a>
+                          <a class="dropdown-item" href="{{ route ('codeofconduct') }}">Code of Conduct</a>
+                          <a class="dropdown-item" href="{{ route ('lunchordders') }}">Lunch Orders</a>
+                          <a class="dropdown-item" href="{{ route ('afterschoolcare') }}">After Shool Care</a>
                         </div>
                       </li>
                       <li class="nav-item dropdown">
@@ -62,10 +62,10 @@
                           Enrollment
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Enrollment</a>
-                          <a class="dropdown-item" href="#">Uniform</a>
-                          <a class="dropdown-item" href="#">New Entrants</a>
-                          <a class="dropdown-item" href="#">International Students</a>
+                          <a class="dropdown-item" href="{{ route ('enrollment') }}">Enrollment</a>
+                          <a class="dropdown-item" href="{{ route ('uniform') }}">Uniform</a>
+                          <a class="dropdown-item" href="{{ route ('newentrants') }}">New Entrants</a>
+                          <a class="dropdown-item" href="{{ route ('internationalstudents') }}">International Students</a>
                         </div>
                       </li>
                       <li class="nav-item dropdown">
