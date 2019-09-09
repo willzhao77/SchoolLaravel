@@ -2,8 +2,7 @@
 @section('content')
 
 <div class="">
-  <!-- <form action="{{ url('back/newscenter') }}" method="POST" enctype="multipart/form-data"> -->
-  <form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ url('back/newscenter') }}" method="POST" enctype="multipart/form-data">
     {!! csrf_field() !!}
     <div class="">
       <label for="">News Title</label><input type="text" name="title" value="">
