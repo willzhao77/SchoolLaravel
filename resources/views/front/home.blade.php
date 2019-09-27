@@ -35,7 +35,7 @@
 
         @foreach ($newsitems as $newsitem)
           <div class="newsitem">
-            <img src="{{ $newsitem->imgpath }}" alt="" class="height200">
+            <img src="{{ $newsitem->imgpath }}" alt="" class="newspic">
             <P>{{ $newsitem->title }}</P>
             <span class="">{{ date("Y-m-d", strtotime($newsitem->created_at)) }}</span>
           </div>
